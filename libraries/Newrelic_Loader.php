@@ -8,11 +8,12 @@
  * @license    http://www.gnu.org/copyleft/lesser.html GNU Lesser General Public License (LGPL) 
  */
 class Newrelic_Loader {
+	/**
+	 * Set transaction name from Router
+	 */
 	public static function name_transaction()
 	{
-		if (extension_loaded ('newrelic')) {
-			newrelic_name_transaction(implode('/', Router::$rsegments));
-		}
+		newrelic_name_transaction(implode('/', Router::$rsegments));
 	}
 	
 }
